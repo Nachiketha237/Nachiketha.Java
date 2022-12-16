@@ -1,0 +1,93 @@
+import java.util.*;
+abstract class Shape{
+    double a,b,c;
+    abstract double area();
+    Shape(double x,double y){
+        a=x;
+        b=y;
+    }
+    Shape(double q){
+        c=q;
+     
+    }
+    public double getA() {
+        return a;
+    }
+    public void setA(double a) {
+        this.a = a;
+    }
+    public double getB() {
+        return b;
+    }
+    public void setB(double b) {
+        this.b = b;
+    }
+    public double getC() {
+        return c;
+    }
+    public void setC(double c) {
+        this.c = c;
+    }
+}
+    class rect extends Shape{
+        rect(double x, double y){
+            super(x,y);
+        }
+        double area(){
+            return(a*b);
+        }
+        double perimeter(){
+            return(2*a+2*b);
+        }
+    }
+    class tri extends Shape{
+        tri(double x, double y){
+            super(x,y);
+        }
+        double area(){
+            return(0.5*a*b);
+        }
+      
+    }
+    class circle extends Shape{
+       circle(double x){
+            super(x);
+        }
+        double area(){
+            return(3.142*c*c);
+        }
+        double perimeter(){
+            return(2*3.142*c);
+        }
+      
+    }
+ class Shapes{
+    public static void main(String[]args){
+        try (Scanner sc = new Scanner(System.in)) {
+            try (Scanner s = new Scanner(System.in)) {
+                //  double p,q,m,n,o;
+                 System.out.println("Enter the value of sides of rectangle");
+                 double p=sc.nextDouble();
+                 double q=sc.nextDouble();
+                 rect r1=new rect(p,q);
+                 System.out.println("Area of rectangle is "+r1.area());
+                 System.out.println("circumferemce of circle is "+r1.perimeter());    
+                 System.out.println("Enter the value of base height of triangle");
+                 double m=s.nextDouble();
+                 double n=s.nextDouble();
+                 tri t1=new tri( m,n);
+                 System.out.println("Area of triangle is "+t1.area());
+
+                 System.out.println("Enter the value of radius of circle");
+                 double o=s.nextDouble();                          
+                 circle c1=new circle(o);    
+                System.out.println("Area of circle is "+c1.area());
+                System.out.println("perimeter of triangle is "+c1.perimeter());                
+            }
+        }
+         
+          
+    }
+ }
+
+
